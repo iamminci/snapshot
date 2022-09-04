@@ -1,5 +1,5 @@
 {
-  "name": "snapshot-snap",
+  "name": "pingly-snap",
   "version": "0.20.0",
   "private": true,
   "description": "The 'Hello, world!' of MetaMask Snaps.",
@@ -24,9 +24,6 @@
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' --ignore-path .gitignore",
     "lint": "yarn lint:eslint && yarn lint:misc --check",
     "lint:fix": "yarn lint:eslint --fix && yarn lint:misc --write"
-  },
-  "dependencies": {
-    "ethers": "^5.7.0"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
@@ -54,5 +51,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "ethers": "^5.7.0"
   }
 }

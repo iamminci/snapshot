@@ -11,7 +11,7 @@
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
-        "packageName": "snapshot-snap",
+        "packageName": "pingly-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
