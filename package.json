@@ -14,12 +14,6 @@
     "postinstall": "patch-package && simple-git-hooks",
     "publish:all": "./scripts/publish-all.sh",
     "link-packages": "./scripts/link-packages.sh",
-    "lint:eslint": "eslint . --cache --ext js,ts",
-    "lint:misc": "prettier '**/*.json' '**/*.md' '!**/CHANGELOG.md' '**/*.yml' --ignore-path .gitignore",
-    "lint:changelogs": "yarn workspaces foreach --parallel --verbose run lint:changelog",
-    "lint:tsconfig": "node scripts/verify-tsconfig.mjs",
-    "lint": "yarn lint:tsconfig && yarn lint:eslint && yarn lint:misc --check",
-    "lint:fix": "yarn lint:tsconfig && yarn lint:eslint --fix && yarn lint:misc --write",
     "build": "yarn build:pre-tsc && yarn build:tsc && yarn build:post-tsc",
     "build:clean": "yarn clean && yarn build",
     "build:tsc": "tsc --build",
@@ -28,17 +22,6 @@
     "clean": "yarn workspaces foreach --parallel --verbose run clean",
     "test": "yarn workspaces foreach --parallel --verbose run test",
     "test:ci": "yarn workspaces foreach --parallel --verbose run test:ci"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "yarn lint-staged && yarn dedupe --check"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix"
-    ],
-    "!(CHANGELOG).{json,yml,md}": [
-      "prettier --write"
-    ]
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^2.0.3",
